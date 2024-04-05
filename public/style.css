@@ -21,7 +21,7 @@ main {
 }
 
 h1 {
-    margin: 10px;
+    margin-top: -40px;
 }
 
 /* Game Board Styles */
@@ -50,7 +50,7 @@ h1 {
 .guessRow {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     flex-wrap: nowrap;
 }
 
