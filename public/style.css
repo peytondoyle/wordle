@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,132 +8,136 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Add some padding and max-width to ensure it doesn't stretch too far on larger screens */
-  padding: 20px;
-  max-width: 600px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
     margin-bottom: 20px;
 }
 
+/* Game Board Styles */
 #gameBoard {
     display: flex;
-    flex-direction: column; /* This ensures the rows stack vertically */
-    align-items: center; /* Centers the rows horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
 .letterBox {
-    width: 60px; /* Width of each box */
-    height: 60px; /* Height of each box, making it square */
-    border: 2px solid #333; /* Border styling */
-    display: flex; /* Enables flexbox properties for centering content */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    font-size: 32px; /* Larger font size for the letter */
-    margin-right: 5px; /* Space between boxes */
-    background-color: #fff; /* Background color of the box */
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin: 4px;
+    background-color: #fff;
 }
 
-/* Ensure the last box doesn't have a margin on the right for alignment */
 .letterBox:last-child {
     margin-right: 0;
 }
 
 .guessRow {
-    display: flex; /* This makes child items (letterBox) align horizontally */
-    justify-content: center; /* Center the boxes horizontally */
-    margin-bottom: 10px; /* Adds some space between each row */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
 }
 
+/* Keyboard Styles */
 #keyboard {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 2%;
 }
 
 .keyboardRow {
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
+    flex-wrap: wrap;
 }
 
-.key, #resetButton {
-    padding: 10px 15px;
-    margin: 0 5px;
+#bottom-row {
+  heigh
+}
+
+.key {
+    min-width: 5%;
+    margin: 5px;
+    border: none;
+    background-color: #777;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 7%;
+    margin: 2px;
+    padding: 10px 1px;
+    font-size: 20px;
+    min-height: 30px;
+}
+
+#resetButton, #bottom-row {
+    padding: 5px 5px;
+    min-width: 15%;
+    margin: 5px;
     border: none;
     background-color: #777;
     color: #fff;
     font-size: 18px;
     cursor: pointer;
     border-radius: 4px;
+    min-height: 5%;
 }
 
 .key:active {
     background-color: #555;
 }
 
-/* Add to style.css */
-.correct {
-    background-color: #4CAF50;
-}
+/* Feedback Colors */
+.correct, .key.correct { background-color: #4CAF50; color: white; }
+.present, .key.present { background-color: #b59f3b; color: white; }
+.absent, .key.absent { background-color: #ccc; color: white; }
+.key.not-in-word { background-color: #ccc; color: white; }
+.key.in-word { background-color: #4CAF50; color: white; }
+.key.out-of-place { background-color: #b59f3b; color: white; }
 
-.present {
-    background-color: yellow;
-}
-
-.absent {
-    background-color: lightgrey;
-}
-
-.key.correct { background-color: #4CAF50; color: white; } /* Correct letter location */
-.key.present { background-color: #b59f3b; color: white; } /* Letter in word, but wrong spot */
-.key.absent { background-color: #3a3a3c; color: white; } /* Letter not in word */
-
-.key.not-in-word {
-    background-color: #ccc;
-    color: #666;
-}
-
-.key.in-word {
-    background-color: #4CAF50; /* A shade of green */
-    color: white;
-}
-
-.key.out-of-place {
-    background-color: #FFEB3B; /* A shade of yellow */
-    color: #000; /* Black text for better readability */
-}
-
+/* Mobile Styles */
 @media (max-width: 600px) {
-    .keyboardRow {
-        flex-wrap: wrap;
+    .letterBox {
+        width: 50px;
+        height: 50px;
+        margin: 4px;
+        font-size: 3.5vw;
     }
 
-    .key, .letterBox {
-        width: 40px; /* Smaller size for small screens */
-        height: 40px;
-        margin: 5px;
-        font-size: 20px; /* Adjust font size as well */
+    .key {
+        width: 7%;
+        margin: 2px;
+        padding: 10px 1px;
+        font-size: 3.5vw;
+        min-height: 30px;
+    }
+
+    .keyboardRow {
+        justify-content: center;
+        margin-bottom: 5px;
+        width: 100%;
     }
 
     .guessRow {
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
     }
-}
-
-.key, .letterBox {
-    /* Ensure tap targets are large enough */
-    min-width: 48px; /* Recommended minimum touch target size */
-    min-height: 48px;
-    font-size: 18px; /* Ensure text is readable */
-    margin: 4px; /* Ensure space between tap targets */
 }
