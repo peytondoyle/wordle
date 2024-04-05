@@ -1,14 +1,23 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+
 }
 
 main {
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Add some padding and max-width to ensure it doesn't stretch too far on larger screens */
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
 }
 
 h1 {
@@ -100,4 +109,30 @@ h1 {
 .key.out-of-place {
     background-color: #FFEB3B; /* A shade of yellow */
     color: #000; /* Black text for better readability */
+}
+
+@media (max-width: 600px) {
+    .keyboardRow {
+        flex-wrap: wrap;
+    }
+
+    .key, .letterBox {
+        width: 40px; /* Smaller size for small screens */
+        height: 40px;
+        margin: 5px;
+        font-size: 20px; /* Adjust font size as well */
+    }
+
+    .guessRow {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.key, .letterBox {
+    /* Ensure tap targets are large enough */
+    min-width: 48px; /* Recommended minimum touch target size */
+    min-height: 48px;
+    font-size: 18px; /* Ensure text is readable */
+    margin: 4px; /* Ensure space between tap targets */
 }
