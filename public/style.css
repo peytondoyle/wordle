@@ -154,7 +154,7 @@ h1 {
         justify-content: center;
         flex-wrap: nowrap;
     }
-    
+
     #resetButton, #bottom-row {
         padding: 5px 5px;
         min-width: 15%;
@@ -166,5 +166,9 @@ h1 {
         cursor: pointer;
         border-radius: 4px;
         min-height: 5%;
+    }
+    #keyboard {
+        width: 100vw; /* Ensure it uses the full width of the viewport */
+        margin: 0 auto; /* Center it horizontally */
     }
 }
