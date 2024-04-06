@@ -71,7 +71,6 @@ h1 {
 /* Keyboard Styles */
 #keyboard {
     width: 100%;
-    max-width: 600px;
     margin: 0 auto;
     padding: 0 2%;
 }
@@ -166,9 +165,5 @@ h1 {
         cursor: pointer;
         border-radius: 4px;
         min-height: 5%;
-    }
-    #keyboard {
-        width: 100vw; /* Ensure it uses the full width of the viewport */
-        margin: 0 auto; /* Center it horizontally */
     }
 }
