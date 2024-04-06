@@ -75,7 +75,7 @@ function submitGuess() {
 
         if (status === 'absent' && key && !key.classList.contains('not-in-word')) {
             key.classList.add('not-in-word');
-        } else if (status === 'present' && key) {
+        } else if (status === 'present' && key && !key.classList.contains('in-word')) {
             key.classList.add('out-of-place');
         } else if (status === 'correct' && key) {
             key.classList.add('in-word');
@@ -97,6 +97,7 @@ function submitGuess() {
         // Optionally reset the game here
     }
 }
+
 
 
 function getFeedbackForGuess(guess) {
