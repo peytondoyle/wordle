@@ -1,6 +1,6 @@
 // script.js
 
-const targetWord = "PITHY"; // Example target word
+const targetWord = "CRUST"; // Example target word
 let currentGuess = "";
 let attempts = 0;
 const maxAttempts = 6; // Maximum attempts allowed
