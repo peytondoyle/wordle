@@ -83,10 +83,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-#bottom-row {
-  heigh
-}
-
 .key {
     min-width: 5%;
     margin: 5px;
@@ -104,7 +100,7 @@ h1 {
 
 #resetButton, #bottom-row {
     padding: 5px 5px;
-    min-width: 15%;
+    min-width: 20%;
     margin: 5px;
     border: none;
     background-color: #777;
@@ -157,7 +153,7 @@ h1 {
 
     #resetButton, #bottom-row {
         padding: 5px 5px;
-        min-width: 15%;
+        min-width: 20%;
         margin: 5px;
         border: none;
         background-color: #777;
