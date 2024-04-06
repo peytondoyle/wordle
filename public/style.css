@@ -71,6 +71,7 @@ h1 {
 /* Keyboard Styles */
 #keyboard {
     width: 100%;
+    max-width: 120vw;
     margin: 0 auto;
     padding: 0 2%;
 }
