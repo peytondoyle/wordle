@@ -1,6 +1,6 @@
 // script.js
 
-const targetWord = "PLUSH"; // Example target word
+let targetWord = localStorage.getItem("targetWord") || "PLUSH";
 let currentGuess = "";
 let attempts = 0;
 const maxAttempts = 6; // Maximum attempts allowed
@@ -168,3 +168,33 @@ function resetKeyboard() {
         key.classList.remove('not-in-word');
     });
 }
+
+function updateWord() {
+    const input = document.getElementById("newWordInput");
+    const newWord = input.value.trim().toUpperCase();
+    if (newWord.length !== 5) {
+      alert("Word must be exactly 5 letters.");
+      return;
+    }
+    localStorage.setItem("targetWord", newWord);
+    alert(`Word updated to "${newWord}". Refresh to play with the new word.`);
+  }
+  
+  // Show admin panel if your secret code is typed
+  let tapCount = 0;
+  let tapTimeout;
+
+  document.getElementById("secretTapZone").addEventListener("click", () => {
+  tapCount++;
+  clearTimeout(tapTimeout);
+
+  tapTimeout = setTimeout(() => {
+    tapCount = 0;
+  }, 500); // reset count after half a second
+
+  if (tapCount === 3) {
+    document.getElementById("adminPanel").style.display = "block";
+    alert("Admin panel unlocked");
+    tapCount = 0;
+  }
+});

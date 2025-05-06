@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
+    <div id="secretTapZone" style="position: absolute; top: 0; left: 0; width: 50px; height: 50px;"></div>
     <main>
         <h1>PEYTON'S WORDLE</h1>
         <div id="gameBoard">
@@ -150,6 +151,12 @@
         cursor: pointer;
       }
       </style>
+
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+    <div id="adminPanel" style="display: none; margin-top: 20px;">
+        <input type="text" id="newWordInput" placeholder="New 5-letter word" maxlength="5">
+        <button onclick="updateWord()">Set New Word</button>
+      </div>
 </body>
 </html>
