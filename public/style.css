@@ -170,3 +170,9 @@ h1 {
         min-height: 5%;
     }
 }
+
+.special-key {
+    min-width: 60px;
+    padding: 10px;
+    font-weight: bold;
+  }

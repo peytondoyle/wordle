@@ -24,7 +24,7 @@ function handleKeyPress(event) {
 }
 
 function handleClick(event) {
-    const key = event.target.textContent;
+    const key = event.target.getAttribute("data-key") || event.target.textContent;
     if (key === "ENTER") {
         submitGuess();
     } else if (key === "DEL") {
