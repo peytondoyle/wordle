@@ -1,6 +1,6 @@
 // script.js
 
-const targetWord = "PLAZA"; // Example target word
+const targetWord = "PLUSH"; // Example target word
 let currentGuess = "";
 let attempts = 0;
 const maxAttempts = 6; // Maximum attempts allowed
@@ -48,8 +48,8 @@ function updateGuessDisplay() {
 }
 
 function submitGuess() {
-    if (currentGuess.length < targetWord.length) {
-        alert("Not enough letters!");
+    if (currentGuess.toUpperCase() === targetWord.toUpperCase()) {
+        showVictoryModal();
         return;
     }
 
@@ -140,6 +140,29 @@ function resetGame() {
         key.classList.remove('correct', 'present', 'absent', 'not-in-word', 'in-word', 'out-of-place'); // Adjust based on your CSS classes
     });
 }
+
+// Modal logic
+const modal = document.getElementById("victoryModal");
+const closeButton = document.querySelector(".close-button");
+
+function showVictoryModal() {
+    modal.style.display = "block";
+}
+
+closeButton.onclick = function () {
+    modal.style.display = "none";
+    // Optional: stop the video by resetting the iframe
+    const iframe = modal.querySelector("iframe");
+    iframe.src = iframe.src;
+};
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+        const iframe = modal.querySelector("iframe");
+        iframe.src = iframe.src;
+    }
+};
 
 function resetKeyboard() {
     document.querySelectorAll('.key').forEach(key => {
