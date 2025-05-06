@@ -48,7 +48,7 @@ h1 {
     align-items: center;
     font-size: 32px;
     margin: 4px;
-    background-color: #d3d6da; /* default */
+    background-color: #ffffff; /* default */
     color: black;
 }
 
@@ -94,7 +94,7 @@ h1 {
 }
 
 .key {
-    background-color: #d3d6da; /* default */
+    background-color: #ffffff; /* default */
     color: black;
     font-weight: bold;
     min-width: 5%;
@@ -103,7 +103,7 @@ h1 {
     padding: 10px 1px;
     font-size: 20px;
     min-height: 30px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease;
