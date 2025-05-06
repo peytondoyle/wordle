@@ -177,7 +177,8 @@ function updateWord() {
       return;
     }
     localStorage.setItem("targetWord", newWord);
-    alert(`Word updated to "${newWord}". Refresh to play with the new word.`);
+    alert(`Word updated to "${newWord}". Reloading...`);
+    location.reload(); // 🔄 force reload
   }
   
   // Show admin panel if your secret code is typed
