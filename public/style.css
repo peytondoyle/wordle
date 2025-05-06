@@ -147,9 +147,10 @@ h1 {
     }
 
     .keyboardRow {
+        display: flex;
         justify-content: center;
-        margin-bottom: 5px;
-        width: 100%;
+        gap: 8px;
+        margin-top: 8px;
     }
 
     .guessRow {
@@ -175,4 +176,23 @@ h1 {
     min-width: 60px;
     padding: 10px;
     font-weight: bold;
+  }
+
+  .action-key {
+    min-width: 100px;
+    padding: 12px 16px;
+    margin: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #777;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .action-key:hover {
+    background-color: #999;
   }
