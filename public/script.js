@@ -85,7 +85,7 @@ function submitGuess() {
 
     // Delay win modal slightly to show feedback first
     if (currentGuess.toUpperCase() === targetWord.toUpperCase()) {
-        setTimeout(showVictoryModal, 400);
+        setTimeout(showVictoryModal, 400); // slight delay for UI update
         return;
     }
 
