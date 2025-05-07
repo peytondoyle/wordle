@@ -1,6 +1,6 @@
 // script.js
 
-let targetWord = localStorage.getItem("targetWord") || "PLUSH";
+let targetWord = localStorage.getItem("targetWord") || "CREAM";
 let currentGuess = "";
 let attempts = 0;
 const maxAttempts = 6; // Maximum attempts allowed
